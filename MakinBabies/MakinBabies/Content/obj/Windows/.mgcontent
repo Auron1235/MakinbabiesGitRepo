@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>G:/GameJam/MakinBabies/MakinBabies/Content/Baby Jar.png</File>
+    <File>G:/GameJam/MakinBabies/MakinBabies/Content/Conveyor.png</File>
+    <File>G:/GameJam/MakinBabies/MakinBabies/Content/Splash.png</File>
+  </SourceFiles>
+</SourceFileCollection>
