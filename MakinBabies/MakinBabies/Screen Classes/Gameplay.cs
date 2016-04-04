@@ -44,10 +44,13 @@ namespace MakinBabies
         {
             this.Content = Content;
             oldKeyState = Keyboard.GetState();
+
+            #region Checkpoints
             lockBox1 = new Rectangle(400, 700, 100, 100);
             lockBox2 = new Rectangle(750, 700, 100, 100);
             lockBox3 = new Rectangle(1100, 700, 100, 100);
             finishBox = new Rectangle(1500, 700, 100, 100);
+            #endregion
 
             #region Belts
             belt = new List<Conveyor>();
@@ -66,6 +69,8 @@ namespace MakinBabies
         public void Update()
         {
             KeyboardState newKeyState = Keyboard.GetState();
+
+            #region Baby Update
             babyTimer++;
             for (int i = 0; i < babies.Count; i++)
             {
@@ -73,12 +78,14 @@ namespace MakinBabies
                 {
                     babies[i].IsStopped = true;
                     babies[i].IsUnderChute = true;
+                    //Add points total code
                 }
                 if (babies[i].Bounds.Intersects(lockBox1) && babies[i].MoveLock1 == true) babies[i].IsStopped = true;
                 if (babies[i].Bounds.Intersects(lockBox1) && babies[i].IsStopped == true && (!oldKeyState.IsKeyDown(Keys.D1) && newKeyState.IsKeyDown(Keys.D1)))
                 {
                     babies[i].MoveLock1 = false;
                     babies[i].IsStopped = false;
+                    //Add or remove quality
                 }
 
                 if (babies[i].Bounds.Intersects(lockBox2) && babies[i].MoveLock2 == true) babies[i].IsStopped = true;
@@ -86,6 +93,7 @@ namespace MakinBabies
                 {
                     babies[i].MoveLock2 = false;
                     babies[i].IsStopped = false;
+                    //Add or remove quality
                 }
 
                 if (babies[i].Bounds.Intersects(lockBox3) && babies[i].MoveLock3 == true) babies[i].IsStopped = true;
@@ -93,6 +101,7 @@ namespace MakinBabies
                 {
                     babies[i].MoveLock3 = false;
                     babies[i].IsStopped = false;
+                    //Add or remove quality
                 }
 
                 foreach (var otherBaby in babies)
@@ -112,25 +121,34 @@ namespace MakinBabies
                 babyTimer = 0;
                 babies.Add(new Baby(Content));
             }
+            #endregion
+
             oldKeyState = newKeyState;
         }
 
         public void Draw(SpriteBatch sb)
         {
+            #region Belt Draw
             foreach (var beltPart in belt)
             {
                 beltPart.Draw(sb);
             }
+            #endregion
+
+            #region Baby Draw
             foreach (var baby in babies)
             {
                 baby.Draw(sb);
             }
-            sb.Begin();
-            sb.Draw(babies[0].BaseImage, lockBox1, Color.White);
-            sb.Draw(babies[0].BaseImage, lockBox2, Color.White);
-            sb.Draw(babies[0].BaseImage, lockBox3, Color.White);
-            sb.Draw(babies[0].BaseImage, finishBox, Color.White);
-            sb.End();
+            #endregion
+
+            //Draws the checkpoints fr view
+            //sb.Begin();
+            //sb.Draw(babies[0].BaseImage, lockBox1, Color.White);
+            //sb.Draw(babies[0].BaseImage, lockBox2, Color.White);
+            //sb.Draw(babies[0].BaseImage, lockBox3, Color.White);
+            //sb.Draw(babies[0].BaseImage, finishBox, Color.White);
+            //sb.End();
         }
         #endregion
     }

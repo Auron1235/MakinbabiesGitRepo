@@ -35,6 +35,11 @@ namespace MakinBabies
             get { return fluidImage; }
             set { fluidImage = value; }
         }
+        public QualityBar QualityBar
+        {
+            get { return qualityBar; }
+            set { qualityBar = value; }
+        }
         public bool IsUnderChute
         {
             get { return isUnderChute; }

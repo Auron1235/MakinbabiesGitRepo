@@ -16,6 +16,11 @@ namespace MakinBabies
         #endregion
 
         #region Gets/Sets
+        public int Quality
+        {
+            get { return quality; }
+            set { quality = value; }
+        }
         #endregion
 
         #region Methods
