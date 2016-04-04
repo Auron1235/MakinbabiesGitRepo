@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>G:/GameJam/MakinBabies/MakinBabies/Content/Conveyor.png</SourceFile>
+  <SourceFile>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Conveyor.png</SourceFile>
   <SourceTime>2016-04-04T11:47:03.1411181+01:00</SourceTime>
-  <DestFile>G:/GameJam/MakinBabies/MakinBabies/Content/bin/Windows/Conveyor.xnb</DestFile>
-  <DestTime>2016-04-04T17:24:42.465277+01:00</DestTime>
+  <DestFile>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/bin/Windows/Conveyor.xnb</DestFile>
+  <DestTime>2016-04-04T19:43:01.6049606+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-06-03T12:10:16+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

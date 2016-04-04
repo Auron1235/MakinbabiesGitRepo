@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>G:/GameJam/MakinBabies/MakinBabies/Content/Baby Jar.png</File>
-    <File>G:/GameJam/MakinBabies/MakinBabies/Content/Conveyor.png</File>
-    <File>G:/GameJam/MakinBabies/MakinBabies/Content/Splash.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Baby Jar.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Conveyor.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Splash.png</File>
   </SourceFiles>
 </SourceFileCollection>
