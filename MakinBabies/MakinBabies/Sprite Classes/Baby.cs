@@ -15,7 +15,8 @@ namespace MakinBabies
         private Texture2D babyImage;
         private Texture2D fluidImage;
 
-        private int quality;
+        QualityBar qualityBar;
+        bool isMoveLocked;
         #endregion
 
         #region Gets/Sets
@@ -29,12 +30,11 @@ namespace MakinBabies
             get { return fluidImage; }
             set { fluidImage = value; }
         }
-        public int Quality
+        public bool IsMoveLocked
         {
-            get { return quality; }
-            set { quality = value; }
+            get { return isMoveLocked; }
+            set { isMoveLocked = value; }
         }
-        
         #endregion
 
         #region Methods
@@ -43,12 +43,27 @@ namespace MakinBabies
             baseImage = Content.Load<Texture2D>("Baby Jar");
             position = new Vector2(100, 768);
             bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width, baseImage.Height);
-        }
 
+            qualityBar = new QualityBar(Content, position);
+            isMoveLocked = false;
+        }
+        public void Movement()
+        {
+            if (!isMoveLocked) position.X += 1;
+            if (isMoveLocked) position.Y -= 10;
+        }
         public void Update()
         {
-            position.X += 1f;
+            qualityBar.Update(position);
+            this.Movement();
             bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width, baseImage.Height);
+        }
+        public void Draw(SpriteBatch sb)
+        {
+            sb.Begin();
+            sb.Draw(baseImage, bounds, Color.White);
+            sb.End();
+            qualityBar.Draw(sb);
         }
         #endregion
     }

@@ -38,7 +38,7 @@ namespace MakinBabies
             #endregion
 
             #region Screen Stuff
-            gameState = GameState.Splash;
+            gameState = GameState.Gameplay;
 
             splashScreen = new Splash(Content);
             titleScreen = new Title(Content);
@@ -117,6 +117,7 @@ namespace MakinBabies
 
                 #region Gameplay Draw
                 case GameState.Gameplay:
+                    GraphicsDevice.Clear(Color.White);
                     gameplayScreen.Draw(spriteBatch);
                     break;
                 #endregion

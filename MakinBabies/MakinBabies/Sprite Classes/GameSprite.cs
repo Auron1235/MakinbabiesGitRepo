@@ -66,7 +66,7 @@ namespace MakinBabies
             batch.Draw(baseImage, position + origin, animRect, Color.White, rotation, origin, 1, SpriteEffects.None, 0);
         }
 
-        public bool collision(GameSprite target)
+        public bool Collision(GameSprite target)
         {
             if (target == null) return false;
             Rectangle sourceRectangle = new Rectangle(
