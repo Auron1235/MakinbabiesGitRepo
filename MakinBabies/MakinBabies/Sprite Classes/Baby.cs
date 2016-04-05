@@ -14,6 +14,7 @@ namespace MakinBabies
         #region Declarations
         private Texture2D babyImage;
         private Texture2D fluidImage;
+        private Rectangle babyBounds;
 
         private QualityBar qualityBar;
         private bool isUnderChute;
@@ -70,9 +71,11 @@ namespace MakinBabies
         #region Methods
         public Baby(ContentManager Content)
         {
-            baseImage = Content.Load<Texture2D>("Baby Jar");
-            position = new Vector2(-100, 768);
-            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width, baseImage.Height);
+            baseImage = Content.Load<Texture2D>("Jar");
+            babyImage = Content.Load<Texture2D>("Baby");
+            position = new Vector2(-100, 650);
+            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width * 2, baseImage.Height * 2);
+            babyBounds = new Rectangle((int)position.X + 30, (int)position.Y + 30, baseImage.Width, baseImage.Height);
 
             qualityBar = new QualityBar(Content, position);
 
@@ -91,13 +94,13 @@ namespace MakinBabies
         {
             qualityBar.Update(position);
             this.Movement();
-            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width, baseImage.Height);
+            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width * 2, baseImage.Height * 2);
+            babyBounds = new Rectangle((int)position.X + 35, (int)position.Y + 50, baseImage.Width, baseImage.Height);
         }
         public void Draw(SpriteBatch sb)
         {
-            sb.Begin();
             sb.Draw(baseImage, bounds, Color.White);
-            sb.End();
+            sb.Draw(babyImage, babyBounds, Color.White);
             qualityBar.Draw(sb);
         }
         #endregion

@@ -4,8 +4,22 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Baby Jar.png</File>
-    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Splash.png</File>
-    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Conveyor.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Splash.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Conveyor.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Baby.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DeliveryMachine.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DeliveryMachineFore.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Egg.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/FishFeotus.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/FrogFeotus.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Jar.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/JarBubblesAnim.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/JarLiquidMask.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/PeopleFeotus.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/SplashBG.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/SplashText.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeEntrance.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeSection.png</File>
+    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeSectionWarning.png</File>
   </SourceFiles>
 </SourceFileCollection>

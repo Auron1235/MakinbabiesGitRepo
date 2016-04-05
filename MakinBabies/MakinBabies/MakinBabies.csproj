@@ -38,7 +38,9 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AudioManager.cs" />
+    <Compile Include="Other Classes\AudioManager.cs" />
+    <Compile Include="Puzzle Classes\PuzzleDNA.cs" />
+    <Compile Include="Sprite Classes\Button.cs" />
     <Compile Include="Screen Classes\Gameplay.cs" />
     <Compile Include="Screen Classes\Options.cs" />
     <Compile Include="Screen Classes\Splash.cs" />

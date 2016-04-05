@@ -28,9 +28,6 @@ namespace MakinBabies
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Begin();
-            //sb.Draw(splashImage, position, Color.White);
-            sb.End();
         }
         #endregion
     }

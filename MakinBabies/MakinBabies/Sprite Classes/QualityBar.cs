@@ -26,7 +26,7 @@ namespace MakinBabies
         #region Methods
         public QualityBar(ContentManager Content, Vector2 babyPos)
         {
-            quality = 100;
+            quality = 50;
 
             baseImage = Content.Load<Texture2D>("Conveyor");
             position = new Vector2((int)babyPos.X - 7, (int)babyPos.Y - 20);

@@ -11,12 +11,11 @@ namespace MakinBabies
         SpriteBatch spriteBatch;
 
         #region Screen Declarations
-        enum GameState { Splash, Title, Options, Gameplay };
+        enum GameState { Splash, Title, Gameplay };
         GameState gameState = new GameState();
 
         Splash splashScreen;
         Title titleScreen;
-        Options optionsScreen;
         Gameplay gameplayScreen;
         #endregion
 
@@ -29,6 +28,7 @@ namespace MakinBabies
         protected override void Initialize()
         {
             #region Graphics
+            IsMouseVisible = true;
             int screenWidth = 1600;
             int screenHeight = 900;
             graphics.PreferredBackBufferWidth = screenWidth;
@@ -38,11 +38,10 @@ namespace MakinBabies
             #endregion
 
             #region Screen Stuff
-            gameState = GameState.Gameplay;
+            gameState = GameState.Splash;
 
             splashScreen = new Splash(Content);
             titleScreen = new Title(Content);
-            optionsScreen = new Options(Content);
             gameplayScreen = new Gameplay(Content);
             #endregion
 
@@ -72,12 +71,11 @@ namespace MakinBabies
                 #region Title Update
                 case GameState.Title:
                     titleScreen.Update();
-                    break;
-                #endregion
-
-                #region Options Update
-                case GameState.Options:
-                    optionsScreen.Update();
+                    if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                    {
+                        titleScreen.Clear();
+                        gameState = GameState.Gameplay;
+                    }
                     break;
                 #endregion
 
@@ -93,6 +91,7 @@ namespace MakinBabies
 
         protected override void Draw(GameTime gameTime)
         {
+            spriteBatch.Begin();
             switch (gameState)
             {
                 #region Splash Draw
@@ -108,13 +107,6 @@ namespace MakinBabies
                     break;
                 #endregion
 
-                #region Options Draw
-                case GameState.Options:
-                    GraphicsDevice.Clear(Color.Blue);
-                    optionsScreen.Draw(spriteBatch);
-                    break;
-                #endregion
-
                 #region Gameplay Draw
                 case GameState.Gameplay:
                     GraphicsDevice.Clear(Color.White);
@@ -122,6 +114,7 @@ namespace MakinBabies
                     break;
                 #endregion
             }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

@@ -51,32 +51,30 @@ namespace MakinBabies
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Begin();
             sb.Draw(baseImage, bounds, Color.White);
-            sb.End();
         }
 
-        public void DrawAnimated(SpriteBatch batch)
-        {
-            if (animationTimeMax <= 0) return;
-            while (currentAnimationTime > animationTimeMax) currentAnimationTime -= animationTimeMax;
-            int currentFrame = (animationframes * currentAnimationTime) / animationTimeMax;
-            int pixelsPerFrame = baseImage.Width / animationframes;
-            Rectangle animRect = new Rectangle(currentFrame * pixelsPerFrame, 0, pixelsPerFrame, baseImage.Height);
-            batch.Draw(baseImage, position + origin, animRect, Color.White, rotation, origin, 1, SpriteEffects.None, 0);
-        }
+        //public void DrawAnimated(SpriteBatch batch)
+        //{
+        //    if (animationTimeMax <= 0) return;
+        //    while (currentAnimationTime > animationTimeMax) currentAnimationTime -= animationTimeMax;
+        //    int currentFrame = (animationframes * currentAnimationTime) / animationTimeMax;
+        //    int pixelsPerFrame = baseImage.Width / animationframes;
+        //    Rectangle animRect = new Rectangle(currentFrame * pixelsPerFrame, 0, pixelsPerFrame, baseImage.Height);
+        //    batch.Draw(baseImage, position + origin, animRect, Color.White, rotation, origin, 1, SpriteEffects.None, 0);
+        //}
 
-        public bool Collision(GameSprite target)
-        {
-            if (target == null) return false;
-            Rectangle sourceRectangle = new Rectangle(
-                (int)(position.X - origin.X), (int)(position.Y - origin.Y),
-                baseImage.Width / animationframes, baseImage.Height / animationframes);
-            Rectangle targetRectangle = new Rectangle(
-                (int)(target.position.X - target.origin.X), (int)(target.position.Y - target.origin.Y),
-                target.baseImage.Width / target.animationframes, target.baseImage.Height / target.animationframes);
-            return (sourceRectangle.Intersects(targetRectangle));
-        }
+        //public bool Collision(GameSprite target)
+        //{
+        //    if (target == null) return false;
+        //    Rectangle sourceRectangle = new Rectangle(
+        //        (int)(position.X - origin.X), (int)(position.Y - origin.Y),
+        //        baseImage.Width / animationframes, baseImage.Height / animationframes);
+        //    Rectangle targetRectangle = new Rectangle(
+        //        (int)(target.position.X - target.origin.X), (int)(target.position.Y - target.origin.Y),
+        //        target.baseImage.Width / target.animationframes, target.baseImage.Height / target.animationframes);
+        //    return (sourceRectangle.Intersects(targetRectangle));
+        //}
         #endregion
     }
 
