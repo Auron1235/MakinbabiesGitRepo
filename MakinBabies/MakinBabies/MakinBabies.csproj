@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Other Classes\AudioManager.cs" />
     <Compile Include="Puzzle Classes\PuzzleDNA.cs" />
+    <Compile Include="Puzzle Classes\PuzzleOrder.cs" />
     <Compile Include="Sprite Classes\Button.cs" />
     <Compile Include="Screen Classes\Gameplay.cs" />
     <Compile Include="Screen Classes\Options.cs" />

@@ -71,11 +71,12 @@ namespace MakinBabies
                 #region Title Update
                 case GameState.Title:
                     titleScreen.Update();
-                    if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                    if (titleScreen.StartButton.IsPressed)
                     {
                         titleScreen.Clear();
                         gameState = GameState.Gameplay;
                     }
+                    if (titleScreen.ExitButton.IsPressed) this.Exit();
                     break;
                 #endregion
 
@@ -109,7 +110,7 @@ namespace MakinBabies
 
                 #region Gameplay Draw
                 case GameState.Gameplay:
-                    GraphicsDevice.Clear(Color.White);
+                    GraphicsDevice.Clear(Color.Black);
                     gameplayScreen.Draw(spriteBatch);
                     break;
                 #endregion

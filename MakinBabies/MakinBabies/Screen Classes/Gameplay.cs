@@ -17,6 +17,7 @@ namespace MakinBabies
 
         private List<Texture2D> exitChuteParts;
         private Texture2D exitChuteEntrance;
+        private Texture2D screenBacking;
 
         private List<Conveyor> belt;
         private List<Baby> babies;
@@ -27,7 +28,7 @@ namespace MakinBabies
         private Rectangle lockBox3;
         private Rectangle finishBox;
 
-        PuzzleDNA firstPuzzle;
+        private PuzzleDNA firstPuzzle;
 
         private Options optionsSection;
         #endregion
@@ -51,24 +52,26 @@ namespace MakinBabies
         {
             this.Content = Content;
             oldKeyState = Keyboard.GetState();
+            screenBacking = Content.Load<Texture2D>("BackgroundScreen");
 
             #region Checkpoints
-            lockBox1 = new Rectangle(400, 700, 1, 100);
-            lockBox2 = new Rectangle(750, 700, 1, 100);
-            lockBox3 = new Rectangle(1100, 700, 1, 100);
-            finishBox = new Rectangle(1587, 700, 1, 100);
+            lockBox1 = new Rectangle(400, 700, 1, 1600);
+            lockBox2 = new Rectangle(750, 700, 1, 1600);
+            lockBox3 = new Rectangle(1100, 700, 1, 1600);
+            finishBox = new Rectangle(1587, 700, 1, 1600);
             #endregion
 
             #region Belts
             belt = new List<Conveyor>();
-            for (int i = 0; i < 72; i++)
+            for (int i = 0; i < 15; i++)
             {
-                belt.Add(new Conveyor(Content, new Vector2(20 * i, 0)));
+                belt.Add(new Conveyor(Content, new Vector2(126 * i, 0)));
             }
             #endregion
 
             #region Babies
             babies = new List<Baby>();
+            babies.Add(new Baby(Content));
             #endregion
 
             #region Chute
@@ -103,7 +106,10 @@ namespace MakinBabies
                     babies[i].IsUnderChute = true;
                     //Add points total code
                 }
-                if (babies[i].Bounds.Intersects(lockBox1) && babies[i].MoveLock1 == true) babies[i].IsStopped = true;
+                if (babies[i].Bounds.Intersects(lockBox1) && babies[i].MoveLock1 == true)
+                {
+                    babies[i].IsStopped = true;
+                }
                 if (babies[i].Bounds.Intersects(lockBox1) && babies[i].IsStopped == true && firstPuzzle.Accept.IsPressed)
                 {
                     if (firstPuzzle.IsPassed)
@@ -167,6 +173,11 @@ namespace MakinBabies
 
         public void Draw(SpriteBatch sb)
         {
+            #region Puzzles Draw
+            firstPuzzle.Draw(sb);
+            sb.Draw(screenBacking, new Rectangle(0, 0, 1600, 900), Color.White);
+            #endregion
+
             #region Belt Draw
             foreach (var beltPart in belt)
             {
@@ -186,14 +197,10 @@ namespace MakinBabies
             {
                 sb.Draw(exitChuteParts[i], new Rectangle(1450, (exitChuteParts[i].Height * 2) * i, exitChuteParts[i].Width * 2, exitChuteParts[i].Height * 2), Color.White);
             }
-            #endregion
-
-            #region Puzzles Draw
-            firstPuzzle.Draw(sb);
+            sb.Draw(exitChuteEntrance, new Rectangle(1450, 462, exitChuteEntrance.Width * 2, exitChuteEntrance.Height * 2), Color.White);
             #endregion
 
             optionsSection.Draw(sb);
-
             //>>>>>>>>>>>>>>>>>>Draw the checkpoints for testing <<<<<<<<<<<<<<<<<<<<<
             //sb.Draw(babies[0].BaseImage, lockBox1, Color.White);
             //sb.Draw(babies[0].BaseImage, lockBox2, Color.White);

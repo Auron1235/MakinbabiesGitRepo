@@ -14,7 +14,7 @@ namespace MakinBabies
         #region Declarations
         private MouseState oldMouseState;
         private bool isPressed;
-        private bool isFlipped;
+        private int pressedIndex;
         private Color color;
         #endregion
 
@@ -34,11 +34,6 @@ namespace MakinBabies
             get { return isPressed; }
             set { isPressed = value; }
         }
-        public bool IsFlipped
-        {
-            get { return isFlipped; }
-            set { isFlipped = value; }
-        }
         #endregion
 
         #region Methods
@@ -46,34 +41,28 @@ namespace MakinBabies
         {
             baseImage = Content.Load<Texture2D>(imageName);
             position = pos;
-            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width * 2, baseImage.Height * 2);
+            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width/4, baseImage.Height/2);
             oldMouseState = Mouse.GetState();
             isPressed = false;
-            isFlipped = false;
             color = Color.White;
         }
         public void Update()
         {
             MouseState newMouseState = Mouse.GetState();
-            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width * 2, baseImage.Height * 2);
+            bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width/4, baseImage.Height/2);
             if (Bounds.Contains(newMouseState.Position))
             {
                 if ((oldMouseState.LeftButton != ButtonState.Pressed && newMouseState.LeftButton == ButtonState.Pressed))
                 {
                     color = Color.Gray;
                     isPressed = true;
-                }
-                else if ((oldMouseState.RightButton != ButtonState.Pressed && newMouseState.RightButton == ButtonState.Pressed))
-                {
-                    color = Color.Gray;
-                    isPressed = true;
-                    isFlipped = true;
+                    pressedIndex = 1;
                 }
                 else
                 {
                     color = Color.White;
                     isPressed = false;
-                    isFlipped = false;
+                    pressedIndex = 0;
                 }
             }
             oldMouseState = newMouseState;
@@ -81,7 +70,11 @@ namespace MakinBabies
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(baseImage, position, color);
+            sb.Draw(baseImage, bounds, color);
+        }
+        public void SpriteSheetDraw(SpriteBatch sb)
+        {
+            sb.Draw(baseImage, bounds, new Rectangle(0, baseImage.Width * pressedIndex, baseImage.Width/2, baseImage.Height), color);
         }
         #endregion
     }

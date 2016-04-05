@@ -4,22 +4,30 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Splash.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Conveyor.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Baby.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DeliveryMachine.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DeliveryMachineFore.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Egg.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/FishFeotus.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/FrogFeotus.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Jar.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/JarBubblesAnim.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/JarLiquidMask.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/PeopleFeotus.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/SplashBG.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/SplashText.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeEntrance.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeSection.png</File>
-    <File>E:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeSectionWarning.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Splash.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Conveyor.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Baby.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DeliveryMachine.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DeliveryMachineFore.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Egg.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/FishFeotus.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/FrogFeotus.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/Jar.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/JarBubblesAnim.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/JarLiquidMask.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/PeopleFeotus.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/SplashBG.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/SplashText.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeEntrance.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeSection.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/VacTubeSectionWarning.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DNA-AT.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DNA-CG.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DNA-GC.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/DNA-TA.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/ConfirmButton.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/BackgroundScreen.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/ExitButton.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/StartButton.png</File>
   </SourceFiles>
 </SourceFileCollection>

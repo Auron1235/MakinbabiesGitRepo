@@ -17,7 +17,7 @@ namespace MakinBabies
         private Button dnaChoiceTA;
         private Button dnaChoiceCG;
         private Button dnaChoiceGC;
-        private Button accept;
+        private Button confirm;
 
         private List<Button> currentChoices;
 
@@ -39,8 +39,8 @@ namespace MakinBabies
         }
         public Button Accept
         {
-            get { return accept; }
-            set { accept = value; }
+            get { return confirm; }
+            set { confirm = value; }
         }
         public bool IsPassed
         {
@@ -53,71 +53,82 @@ namespace MakinBabies
         public PuzzleDNA(ContentManager Content)
         {
             this.Content = Content;
-            dnaChoiceAT = new Button(Content, "Jar", new Vector2(100, 100));
-            dnaChoiceCG = new Button(Content, "Jar", new Vector2(100, 150));
-            accept = new Button(Content, "Jar", new Vector2(100, 200));
+            rng = new Random();
+            dnaChoiceAT = new Button(Content, "DNA-AT", new Vector2(500, 200));
+            dnaChoiceTA = new Button(Content, "DNA-TA", new Vector2(500, 260));
+            dnaChoiceCG = new Button(Content, "DNA-CG", new Vector2(500, 320));
+            dnaChoiceGC = new Button(Content, "DNA-GC", new Vector2(500, 380));
+            confirm = new Button(Content, "ConfirmButton", new Vector2(500, 450));
 
             currentChoices = new List<Button>();
             answers = new List<Button>();
-            CreatePuzzle();
+
+            Create();
         }
-        public void CreatePuzzle()
+        public void Create()
         {
             currentChoices.Clear();
+            answers.Clear();
             Generate();
         }
         public void Generate()
         {
             for (int i = 0; i < 3; i++)
             {
-                rng = new Random();
-                if (rng.Next(1, 5) == 1) answers.Add(new Button(Content, "Jar", new Vector2(600, 100 + i * 50)));
-                if (rng.Next(1, 5) == 2) answers.Add(new Button(Content, "Jar", new Vector2(600, 100 + i * 50)));
-                if (rng.Next(1, 5) == 3) answers.Add(new Button(Content, "Jar", new Vector2(600, 100 + i * 50)));
+                int randInt = rng.Next(1, 5);
+                if (randInt == 1) answers.Add(new Button(Content, "DNA-AT", new Vector2(1000, 200 + i * 60)));
+                if (randInt == 2) answers.Add(new Button(Content, "DNA-TA", new Vector2(1000, 200 + i * 60)));
+                if (randInt == 3) answers.Add(new Button(Content, "DNA-GC", new Vector2(1000, 200 + i * 60)));
+                if (randInt == 4) answers.Add(new Button(Content, "DNA-CG", new Vector2(1000, 200 + i * 60)));
             }
-        }
-        public void IsCorrect()
-        {
-            if (currentChoices[0].BaseImage == answers[0].BaseImage && currentChoices[1].BaseImage == answers[1].BaseImage && currentChoices[2].BaseImage == answers[2].BaseImage)
-                isPassed = true;
-            else isPassed = false;
         }
         public void Update()
         {
-            dnaChoiceAT.Update();
-            dnaChoiceCG.Update();
-            accept.Update();
-            if (dnaChoiceAT.IsPressed && !dnaChoiceAT.IsFlipped && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "Jar", new Vector2(0, 0)));
-            if (dnaChoiceCG.IsPressed && !dnaChoiceCG.IsFlipped && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "Jar", new Vector2(0, 0)));
+            if (dnaChoiceAT.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-AT", new Vector2(-1000, -1000)));
+            if (dnaChoiceCG.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-CG", new Vector2(-1000, -1000)));
+            if (dnaChoiceTA.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-TA", new Vector2(-1000, -1000)));
+            if (dnaChoiceGC.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-GC", new Vector2(-1000, -1000)));
 
-            if (dnaChoiceAT.IsPressed && dnaChoiceAT.IsFlipped) /*Rightclick CG logic*/;
-            if (dnaChoiceCG.IsPressed && dnaChoiceCG.IsFlipped) /*Rightclick GC logic*/;
+            dnaChoiceAT.Update();
+            dnaChoiceTA.Update();
+            dnaChoiceCG.Update();
+            dnaChoiceGC.Update();
+
+            confirm.Update();
 
             for (int i = 0; i < currentChoices.Count; i++)
             {
                 currentChoices[i].Update();
-                currentChoices[i].Position = new Vector2(400, 100 + i * 50);
+                currentChoices[i].Position = new Vector2(750, 200 + i * 60);
                 if (currentChoices[i].IsPressed)
                 {
                     currentChoices.RemoveAt(i);
                     break;
                 }
             }
-            if (accept.IsPressed) CreatePuzzle();
+            if (currentChoices.Count == 3)
+            {
+                if (currentChoices[0].BaseImage == answers[0].BaseImage && currentChoices[1].BaseImage == answers[1].BaseImage && currentChoices[2].BaseImage == answers[2].BaseImage)
+                    isPassed = true;
+            }
+            else isPassed = false;
+            if (confirm.IsPressed) Create();
         }
         public void Draw(SpriteBatch sb)
         {
-            dnaChoiceAT.Draw(sb);
-            dnaChoiceCG.Draw(sb);
-            accept.Draw(sb);
+            dnaChoiceAT.SpriteSheetDraw(sb);
+            dnaChoiceTA.SpriteSheetDraw(sb);
+            dnaChoiceCG.SpriteSheetDraw(sb);
+            dnaChoiceGC.SpriteSheetDraw(sb);
+            confirm.SpriteSheetDraw(sb);
             foreach (var button in answers)
             {
-                button.Draw(sb);
+                button.SpriteSheetDraw(sb);
             }
 
             foreach (var button in currentChoices)
             {
-                button.Draw(sb);
+                button.SpriteSheetDraw(sb);
             }
         }
         #endregion

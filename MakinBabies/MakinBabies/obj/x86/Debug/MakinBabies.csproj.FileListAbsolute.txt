@@ -28,7 +28,6 @@ G:\GameJam\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Conveyor.xnb
 G:\GameJam\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Splash.xnb
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\obj\x86\Debug\MakinBabies.exe
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\obj\x86\Debug\MakinBabies.pdb
-G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Baby Jar.xnb
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Conveyor.xnb
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Splash.xnb
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\MakinBabies.exe
@@ -96,3 +95,26 @@ E:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\
 E:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\VacTubeEntrance.xnb
 E:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\VacTubeSection.xnb
 E:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\VacTubeSectionWarning.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Baby.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\DeliveryMachine.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\DeliveryMachineFore.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Egg.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\FishFeotus.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\FrogFeotus.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\Jar.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\JarBubblesAnim.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\JarLiquidMask.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\PeopleFeotus.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\SplashBG.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\SplashText.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\VacTubeEntrance.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\VacTubeSection.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\VacTubeSectionWarning.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\DNA-AT.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\DNA-CG.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\DNA-GC.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\DNA-TA.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\BackgroundScreen.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\ConfirmButton.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\ExitButton.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\StartButton.xnb

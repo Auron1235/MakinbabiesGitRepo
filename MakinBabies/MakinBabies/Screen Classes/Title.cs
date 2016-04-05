@@ -22,6 +22,9 @@ namespace MakinBabies
         private Options optionsSection;
 
         private Rectangle finishBox;
+
+        private Button startButton;
+        private Button exitButton;
         #endregion
 
         #region Gets/Sets
@@ -35,7 +38,16 @@ namespace MakinBabies
             get { return babies; }
             set { babies = value; }
         }
-        
+        public Button StartButton
+        {
+            get { return startButton; }
+            set { startButton = value; }
+        }
+        public Button ExitButton
+        {
+            get { return exitButton; }
+            set { exitButton = value; }
+        }
         #endregion
 
         #region Methods
@@ -43,7 +55,8 @@ namespace MakinBabies
         {
             this.Content = Content;
             oldKeyState = Keyboard.GetState();
-
+            startButton = new Button(Content, "StartButton", new Vector2(400, 500));
+            exitButton = new Button(Content, "ExitButton", new Vector2(900, 500));
             finishBox = new Rectangle(1600, 700, 1, 100);
 
             #region Belts
@@ -70,6 +83,8 @@ namespace MakinBabies
         public void Update()
         {
             KeyboardState newKeyState = Keyboard.GetState();
+            startButton.Update();
+            exitButton.Update();
 
             #region Baby Update
             babyTimer++;
@@ -118,6 +133,8 @@ namespace MakinBabies
             #endregion
 
             #region Buttons Draw
+            startButton.SpriteSheetDraw(sb);
+            exitButton.SpriteSheetDraw(sb);
             #endregion
             
             optionsSection.Draw(sb);

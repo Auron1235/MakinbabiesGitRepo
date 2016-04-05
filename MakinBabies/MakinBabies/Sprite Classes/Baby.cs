@@ -73,7 +73,7 @@ namespace MakinBabies
         {
             baseImage = Content.Load<Texture2D>("Jar");
             babyImage = Content.Load<Texture2D>("Baby");
-            position = new Vector2(-100, 650);
+            position = new Vector2(-200, 700);
             bounds = new Rectangle((int)position.X, (int)position.Y, baseImage.Width * 2, baseImage.Height * 2);
             babyBounds = new Rectangle((int)position.X + 30, (int)position.Y + 30, baseImage.Width, baseImage.Height);
 
