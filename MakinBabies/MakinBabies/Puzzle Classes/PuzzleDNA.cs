@@ -73,7 +73,7 @@ namespace MakinBabies
         }
         public void Generate()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 int randInt = rng.Next(1, 5);
                 if (randInt == 1) answers.Add(new Button(Content, "DNA-AT", new Vector2(1000, 200 + i * 60)));
@@ -84,10 +84,10 @@ namespace MakinBabies
         }
         public void Update()
         {
-            if (dnaChoiceAT.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-AT", new Vector2(-1000, -1000)));
-            if (dnaChoiceCG.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-CG", new Vector2(-1000, -1000)));
-            if (dnaChoiceTA.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-TA", new Vector2(-1000, -1000)));
-            if (dnaChoiceGC.IsPressed && currentChoices.Count < 3) currentChoices.Add(new Button(Content, "DNA-GC", new Vector2(-1000, -1000)));
+            if (dnaChoiceAT.IsPressed && currentChoices.Count < 5) currentChoices.Add(new Button(Content, "DNA-AT", new Vector2(-1000, -1000)));
+            if (dnaChoiceCG.IsPressed && currentChoices.Count < 5) currentChoices.Add(new Button(Content, "DNA-CG", new Vector2(-1000, -1000)));
+            if (dnaChoiceTA.IsPressed && currentChoices.Count < 5) currentChoices.Add(new Button(Content, "DNA-TA", new Vector2(-1000, -1000)));
+            if (dnaChoiceGC.IsPressed && currentChoices.Count < 5) currentChoices.Add(new Button(Content, "DNA-GC", new Vector2(-1000, -1000)));
 
             dnaChoiceAT.Update();
             dnaChoiceTA.Update();
@@ -106,9 +106,9 @@ namespace MakinBabies
                     break;
                 }
             }
-            if (currentChoices.Count == 3)
+            if (currentChoices.Count == 5)
             {
-                if (currentChoices[0].BaseImage == answers[0].BaseImage && currentChoices[1].BaseImage == answers[1].BaseImage && currentChoices[2].BaseImage == answers[2].BaseImage)
+                if (currentChoices[0].BaseImage == answers[0].BaseImage && currentChoices[1].BaseImage == answers[1].BaseImage && currentChoices[2].BaseImage == answers[2].BaseImage && currentChoices[3].BaseImage == answers[3].BaseImage && currentChoices[4].BaseImage == answers[4].BaseImage)
                     isPassed = true;
             }
             else isPassed = false;

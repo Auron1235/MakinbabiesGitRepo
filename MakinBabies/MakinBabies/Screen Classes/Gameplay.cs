@@ -13,7 +13,9 @@ namespace MakinBabies
     {
         #region Declarations
         private ContentManager Content;
+        private SpriteFont qualityText;
         private KeyboardState oldKeyState;
+        private int totalQuality;
 
         private List<Texture2D> exitChuteParts;
         private Texture2D exitChuteEntrance;
@@ -22,11 +24,15 @@ namespace MakinBabies
         private List<Conveyor> belt;
         private List<Baby> babies;
         private int babyTimer;
+        private int timerCount;
 
         private Rectangle lockBox1;
-        private Rectangle lockBox2;
-        private Rectangle lockBox3;
+        //private Rectangle lockBox2;
+        //private Rectangle lockBox3;
         private Rectangle finishBox;
+        private Rectangle killBox;
+
+        private bool endGame;
 
         private PuzzleDNA firstPuzzle;
 
@@ -44,21 +50,30 @@ namespace MakinBabies
             get { return babies; }
             set { babies = value; }
         }
-        
+        public bool EndGame
+        {
+            get { return endGame; }
+            set { endGame = value; }
+        }
         #endregion
 
         #region Methods
         public Gameplay(ContentManager Content)
         {
             this.Content = Content;
+            qualityText = Content.Load<SpriteFont>("QualityText");
             oldKeyState = Keyboard.GetState();
             screenBacking = Content.Load<Texture2D>("BackgroundScreen");
+            totalQuality = 200;
+
+            endGame = false;
 
             #region Checkpoints
-            lockBox1 = new Rectangle(400, 700, 1, 1600);
-            lockBox2 = new Rectangle(750, 700, 1, 1600);
-            lockBox3 = new Rectangle(1100, 700, 1, 1600);
+            lockBox1 = new Rectangle(750, 700, 1, 1600);
+            //lockBox2 = new Rectangle(750, 700, 1, 1600);
+            //lockBox3 = new Rectangle(1100, 700, 1, 1600);
             finishBox = new Rectangle(1587, 700, 1, 1600);
+            killBox = new Rectangle(1500, -300, 100, 100);
             #endregion
 
             #region Belts
@@ -70,6 +85,7 @@ namespace MakinBabies
             #endregion
 
             #region Babies
+            timerCount = 350;
             babies = new List<Baby>();
             babies.Add(new Baby(Content));
             #endregion
@@ -100,6 +116,12 @@ namespace MakinBabies
             babyTimer++;
             for (int i = 0; i < babies.Count; i++)
             {
+                if (babies[i].Bounds.Intersects(killBox))
+                {
+                    totalQuality = totalQuality + babies[i].QualityBar.Quality - 100;
+                    babies.RemoveAt(i);
+                    break;
+                }
                 if (babies[i].Bounds.Intersects(finishBox))
                 {
                     babies[i].IsStopped = true;
@@ -114,52 +136,53 @@ namespace MakinBabies
                 {
                     if (firstPuzzle.IsPassed)
                     {
-                        babies[i].QualityBar.Quality += 20;
+                        babies[i].QualityBar.Quality += 40;
                         babies[i].MoveLock1 = false;
                         babies[i].IsStopped = false;
                     }
                     else
                     {
-                        babies[i].QualityBar.Quality -= 20;
+                        babies[i].QualityBar.Quality -= 40;
                         babies[i].MoveLock1 = false;
                         babies[i].IsStopped = false;
                     }
-                    //Add or remove quality
                 }
 
-                if (babies[i].Bounds.Intersects(lockBox2) && babies[i].MoveLock2 == true) babies[i].IsStopped = true;
-                if (babies[i].Bounds.Intersects(lockBox2) && babies[i].IsStopped == true && (!oldKeyState.IsKeyDown(Keys.D1) && newKeyState.IsKeyDown(Keys.D2)))
-                {
-                    babies[i].MoveLock2 = false;
-                    babies[i].IsStopped = false;
-                    //Add or remove quality
-                }
+                //if (babies[i].Bounds.Intersects(lockBox2) && babies[i].MoveLock2 == true) babies[i].IsStopped = true;
+                //if (babies[i].Bounds.Intersects(lockBox2) && babies[i].IsStopped == true && (!oldKeyState.IsKeyDown(Keys.D1) && newKeyState.IsKeyDown(Keys.D2)))
+                //{
+                //    babies[i].MoveLock2 = false;
+                //    babies[i].IsStopped = false;
+                //    //Add or remove quality
+                //}
 
-                if (babies[i].Bounds.Intersects(lockBox3) && babies[i].MoveLock3 == true) babies[i].IsStopped = true;
-                if (babies[i].Bounds.Intersects(lockBox3) && babies[i].IsStopped == true && (!oldKeyState.IsKeyDown(Keys.D1) && newKeyState.IsKeyDown(Keys.D3)))
-                {
-                    babies[i].MoveLock3 = false;
-                    babies[i].IsStopped = false;
-                    //Add or remove quality
-                }
+                //if (babies[i].Bounds.Intersects(lockBox3) && babies[i].MoveLock3 == true) babies[i].IsStopped = true;
+                //if (babies[i].Bounds.Intersects(lockBox3) && babies[i].IsStopped == true && (!oldKeyState.IsKeyDown(Keys.D1) && newKeyState.IsKeyDown(Keys.D3)))
+                //{
+                //    babies[i].MoveLock3 = false;
+                //    babies[i].IsStopped = false;
+                //    //Add or remove quality
+                //}
 
                 foreach (var otherBaby in babies)
                 {
                     if (otherBaby == babies[i]) break;
                     if (babies[i].Bounds.Intersects(otherBaby.Bounds)) babies[i].IsStopped = true;
                     else if (!babies[i].Bounds.Intersects(otherBaby.Bounds)
-                        && (!babies[i].Bounds.Intersects(lockBox1) && !babies[i].Bounds.Intersects(lockBox2)
-                            && !babies[i].Bounds.Intersects(lockBox3))
+                        && (!babies[i].Bounds.Intersects(lockBox1)/* && !babies[i].Bounds.Intersects(lockBox2)
+                            && !babies[i].Bounds.Intersects(lockBox3)*/)
                                 && babies[i].IsUnderChute == false)
                         babies[i].IsStopped = false;
                 }
                 babies[i].Update();
             }
-            if (babyTimer >= 350)
+            if (babyTimer >= timerCount)
             {
+                if (timerCount >= 100) timerCount -= 4;
                 babyTimer = 0;
                 babies.Add(new Baby(Content));
             }
+            if (babies.Count >= 10) endGame = true;
             #endregion
 
             #region Puzzles Update
@@ -200,6 +223,11 @@ namespace MakinBabies
             sb.Draw(exitChuteEntrance, new Rectangle(1450, 462, exitChuteEntrance.Width * 2, exitChuteEntrance.Height * 2), Color.White);
             #endregion
 
+            sb.DrawString(qualityText, "Total: " + totalQuality, new Vector2(50, 250), Color.White);
+            sb.DrawString(qualityText, "Babies: " + babies.Count, new Vector2(50, 200), Color.White);
+            sb.DrawString(qualityText, "Try to keep your total", new Vector2(10, 50), Color.White);
+            sb.DrawString(qualityText, "above 0 and baby count", new Vector2(10, 100), Color.White);
+            sb.DrawString(qualityText, "below 10 or GAME OVER", new Vector2(10, 150), Color.White);
             optionsSection.Draw(sb);
             //>>>>>>>>>>>>>>>>>>Draw the checkpoints for testing <<<<<<<<<<<<<<<<<<<<<
             //sb.Draw(babies[0].BaseImage, lockBox1, Color.White);

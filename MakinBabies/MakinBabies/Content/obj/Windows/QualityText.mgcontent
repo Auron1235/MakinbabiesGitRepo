@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/QualityText.spritefont</SourceFile>
+  <SourceTime>2015-01-20T00:24:04+00:00</SourceTime>
+  <DestFile>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/bin/Windows/QualityText.xnb</DestFile>
+  <DestTime>2016-04-05T22:17:06.2876238+01:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2015-06-03T12:10:16+01:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2015-06-03T12:10:16+01:00</ProcessorTime>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

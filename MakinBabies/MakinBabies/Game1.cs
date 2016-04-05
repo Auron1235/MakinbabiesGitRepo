@@ -103,7 +103,7 @@ namespace MakinBabies
 
                 #region Title Draw
                 case GameState.Title:
-                    GraphicsDevice.Clear(Color.Red);
+                    GraphicsDevice.Clear(Color.Black);
                     titleScreen.Draw(spriteBatch);
                     break;
                 #endregion
@@ -112,6 +112,7 @@ namespace MakinBabies
                 case GameState.Gameplay:
                     GraphicsDevice.Clear(Color.Black);
                     gameplayScreen.Draw(spriteBatch);
+                    if (gameplayScreen.EndGame == true) this.Exit();
                     break;
                 #endregion
             }

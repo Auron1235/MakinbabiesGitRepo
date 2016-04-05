@@ -29,5 +29,7 @@
     <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/BackgroundScreen.png</File>
     <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/ExitButton.png</File>
     <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/StartButton.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/TitleText.png</File>
+    <File>G:/GameJam/MakinbabiesGitRepo/MakinBabies/MakinBabies/Content/QualityText.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

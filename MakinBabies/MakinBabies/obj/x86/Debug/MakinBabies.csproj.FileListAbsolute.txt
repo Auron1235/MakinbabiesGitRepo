@@ -118,3 +118,9 @@ G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\ConfirmButton.xnb
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\ExitButton.xnb
 G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\StartButton.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\TitleText.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\Content\QualityText.xnb
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\MakinBabies.exe.manifest
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\bin\Windows\Debug\MakinBabies.application
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\obj\x86\Debug\MakinBabies.exe.manifest
+G:\GameJam\MakinbabiesGitRepo\MakinBabies\MakinBabies\obj\x86\Debug\MakinBabies.application
